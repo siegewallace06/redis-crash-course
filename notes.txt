@@ -1,0 +1,208 @@
+=======================
+Redis Introduction
+=======================
+Docs:
+https://redis.io/documentation
+
+To put it simple, it is a key-value store. It is a NoSQL database.
+Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams.
+Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
+
+To install Redis on Ubuntu 18.04, run the following commands:
+sudo apt update
+sudo apt install redis
+
+To start redis server, run the following command:
+redis-server
+
+To access redis cli, run the following command:
+redis-cli
+
+=======================
+Redis Commands
+=======================
+To set a key-value pair, run the following command:
+set key value
+
+example:
+SET name "John"
+
+To get the value of a key, run the following command:
+get key
+
+example:
+GET name
+
+When we set a key, the data type is automatically set to string. To set the data type, run the following command:
+set key value type
+
+example:
+SET name "John" STRING
+
+To check if the key exists, run the following command:
+exists key
+
+example:
+EXISTS name
+
+To check the key pattern, run the following command:
+keys pattern
+
+example:
+KEYS *
+
+To delete all keys, run the following command:
+flushall
+
+To delete a key, run the following command:
+del key
+
+example:
+DEL name
+
+To set a key with an expiry time, run the following command:
+set key value ex seconds
+
+example:
+SET name "John" EX 10
+setex name 10 "John"
+
+To check the time to live of a key, run the following command:
+ttl key
+
+example:
+TTL name
+
+To set a list of values, run the following command:
+lpush key value
+
+example:
+LPUSH list 1 2 3 4 5
+
+To get the list of values, run the following command:
+lrange key start stop
+
+example:
+LRANGE list 0 -1
+
+To push a value to the end of the list, run the following command:
+rpush key value
+
+example:
+RPUSH list 6 7 8 9 10
+
+To delete a value from the list, run the following command:
+lrem key count value
+
+example:
+LREM list 1 1
+
+To delete the left most value from the list, run the following command:
+lpop key
+
+example:
+LPOP list
+
+To delete the right most value from the list, run the following command:
+rpop key
+
+example:
+RPOP list
+
+Set is a collection of unique values. To add a value to the set, run the following command:
+sadd key value
+
+example:
+SADD set 1 2 3 4 5
+
+To get the set of values, run the following command:
+smembers key
+
+example:
+SMEMBERS set
+
+To delete a value from the set, run the following command:
+srem key value
+
+example:
+SREM set 1
+
+To check if the value exists in the set, run the following command:
+sismember key value
+
+example:
+SISMEMBER set 1
+
+To set a hash, run the following command:
+hset key field value
+
+example:
+HSET hash name "John"
+
+To get the hash, run the following command:
+hgetall key
+
+example:
+HGETALL hash
+
+To get a value from the hash, run the following command:
+hget key field
+
+example:
+HGET hash name
+
+To delete a value from the hash, run the following command:
+hdel key field
+
+example:
+HDEL hash name
+
+To check if the field exists in the hash, run the following command:
+hexists key field
+
+example:
+HEXISTS hash name
+
+=======================
+Node JS example
+=======================
+We will create a simple node js application to store and retrieve data from redis.
+
+To install node js, run the following commands:
+sudo apt update
+sudo apt install nodejs
+
+To install npm, run the following commands:
+sudo apt update
+sudo apt install npm
+
+We install express js to create a simple web server.
+To install express js, run the following commands:
+npm install express
+
+Install axios to make http requests.
+To install axios, run the following commands:
+npm install axios
+
+install nodemon to automatically restart the node application when file changes in the directory are detected.
+To install nodemon, run the following commands:
+npm install nodemon
+
+install cors to enable cross-origin resource sharing.
+To install cors, run the following commands:
+npm install cors
+
+So after we test our node example, we can see that
+it took sometimes to get the data from the server.
+
+we will use redis to store the data in the cache.
+To install redis, run the following commands:
+npm install redis
+
+We will use redis to store the data in the cache inside our code.
+
+After setting the data in the cache, we can see in redis cli that the data is stored in the cache.
+
+To see the data run this command:
+KEYS *

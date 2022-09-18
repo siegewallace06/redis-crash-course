@@ -1,0 +1,28 @@
+{
+  "name": "redis-crash-course",
+  "version": "1.0.0",
+  "description": "Basic Redis Usage",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siegewallace06/redis-crash-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siegewallace06/redis-crash-course/issues"
+  },
+  "homepage": "https://github.com/siegewallace06/redis-crash-course#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20",
+    "redis": "^4.3.1"
+  }
+}
